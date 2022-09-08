@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Calculator";
+}
+
+<div class="calculator">
+    <div class="calculator_output">@Model.Result</div>
+    <div class="calculator_keys">
+        <form method="post" asp-page-handler="Operator" class="form">
+            <button class="calculator_key operator" name="Operator" value="Plus" id="btn_Plus">+</button>
+            <button class="calculator_key operator" name="Operator" value="Minus" id="btn_Minus">-</button>
+            <button class="calculator_key operator" name="Operator" value="Multiply" id="btn_Multiply">&times;</button>
+            <button class="calculator_key operator" name="Operator" value="Divide" id="btn_Divide">÷</button>
+        </form>
+
+        <form method="post" asp-page-handler="Number" class="form-numbers">
+            <button class="calculator_key" name="Number" value="7" id="btn_Seven">7</button>
+            <button class="calculator_key" name="Number" value="8" id="btn_Eigth">8</button>
+            <button class="calculator_key" name="Number" value="9" id="btn_Nine">9</button>
+            <button class="calculator_key" name="Number" value="4" id="btn_Fourth">4</button>
+            <button class="calculator_key" name="Number" value="5" id="btn_Five">5</button>
+            <button class="calculator_key" name="Number" value="6" id="btn_Six">6</button>
+            <button class="calculator_key" name="Number" value="1" id="btn_One">1</button>
+            <button class="calculator_key" name="Number" value="2" id="btn_Two">2</button>
+            <button class="calculator_key" name="Number" value="3" id="btn_Three">3</button>
+            <button class="calculator_key" name="Number" value="." id="btn_Point">.</button>
+            <button class="calculator_key" name="Number" value="0" id="btn_Zero">0</button>
+            <button class="calculator_key" name="Number" value="AC" id="btn_Remove">AC</button>
+        </form>
+        <form method="post" asp-page-handler="Calculate">
+            <button class="calculator_key enter" id="lbl_Equal" >=</button>
+        </form>
+    </div>
+</div>
+
+
